@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Setting>
+  <Paths pathExec="D:\luaTest\helloworld.lua"/>
+  <Directory DirectoryPath="D:\luaTest"/>
+</Setting>

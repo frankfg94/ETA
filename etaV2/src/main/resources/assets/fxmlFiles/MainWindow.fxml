@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<VBox minHeight="50.0" prefHeight="358.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.tldr.eta.controler.MainWindow">
+   <children>
+       <MenuBar fx:id="menuBar">
+          <menus>
+            <Menu fx:id="projectMenu" mnemonicParsing="false" text="Projet">
+               <items>
+                  <MenuItem fx:id="menuNewProject" mnemonicParsing="false" onAction="#onNewProject" text="New Project" />
+                  <MenuItem fx:id="menuChangeProject" mnemonicParsing="false" onAction="#onChangeProject" text="Switch Project" />
+                  <MenuItem fx:id="menuProjectSettings" mnemonicParsing="false" onAction="#onProjectSettings" text="Project Settings" />
+                   <MenuItem fx:id="menuProjectExport" disable="false" mnemonicParsing="false" onAction="#onGitHubSend" text="Send To GitHub" />
+               </items>
+            </Menu>
+              <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+                 <items>
+                     <MenuItem fx:id="menuNewFile" mnemonicParsing="false" onAction="#onNew" text="New File">
+                         <accelerator>
+                             <KeyCodeCombination alt="UP" code="N" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                         </accelerator>
+                     </MenuItem>
+                     <MenuItem fx:id="menuOpenFile" mnemonicParsing="false" onAction="#onOpen" text="Open File">
+                         <accelerator>
+                             <KeyCodeCombination alt="UP" code="O" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                         </accelerator>
+                     </MenuItem>
+                     <SeparatorMenuItem mnemonicParsing="false" />
+                     <MenuItem fx:id="menuSaveFile" mnemonicParsing="false" onAction="#onSave" text="Save File">
+                         <accelerator>
+                             <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                         </accelerator>
+                     </MenuItem>
+                     <MenuItem fx:id="menuSaveAsFile" mnemonicParsing="false" onAction="#onSaveAs" text="Save As">
+                         <accelerator>
+                             <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="DOWN" shortcut="DOWN" />
+                         </accelerator>
+                     </MenuItem>
+                 </items>
+              </Menu>
+              <Menu fx:id="editMenu" mnemonicParsing="false" text="Edition">
+                  <MenuItem mnemonicParsing="false" text="Supprimer" />
+               <MenuItem fx:id="expandTreeView" mnemonicParsing="false" onAction="#onExpandTreeView" text="Tout étendre" />
+               <MenuItem fx:id="reduceTreeView" mnemonicParsing="false" onAction="#onReduceTreeView" text="Tout réduire" />
+              </Menu>
+              <Menu fx:id="preferences" mnemonicParsing="false" text="Préférences">
+                  <MenuItem fx:id="settingsWindow" mnemonicParsing="false" onAction="#showSettingsWindow" text="Paramètres">
+                      <accelerator>
+                          <KeyCodeCombination alt="UP" code="COMMA" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                      </accelerator>
+                    </MenuItem>
+              </Menu>
+              <Menu fx:id="helpMenu" mnemonicParsing="false" text="help">
+                 <items>
+                     <MenuItem mnemonicParsing="false" text="About" />
+                 </items>
+              </Menu>
+          </menus>
+       </MenuBar>
+       <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="36.0" prefWidth="593.0">
+          <children>
+              <Button fx:id="btnCompilation" mnemonicParsing="false" onAction="#onCompilation" prefHeight="24.0" prefWidth="24.0" text="C">
+                  <HBox.margin>
+                      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                  </HBox.margin>
+              </Button>
+              <Button fx:id="btnExec" mnemonicParsing="false" onAction="#onExec" prefHeight="24.0" prefWidth="24.0" text="R">
+                  <HBox.margin>
+                      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                  </HBox.margin>
+              </Button>
+          </children>
+       </HBox>
+
+        <AnchorPane VBox.vgrow="ALWAYS">
+            <SplitPane dividerPositions="0.7973856209150327" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
+                <items>
+                    <SplitPane fx:id="subSplitPane" dividerPositions="0.2">
+                        <items>
+                            <TreeView fx:id="fileManager" prefHeight="234.0" prefWidth="142.0" />
+                            <TabPane fx:id="editTab" onDragDropped="#createTabOnDrop" onDragOver="#onDragAndDrop" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                            </TabPane>
+                        </items>
+                    </SplitPane>
+                    <TextArea fx:id="terminal" editable="false" onKeyPressed="#terminallKeyPrses" onKeyTyped="#terminallKeyType" prefHeight="200.0" prefWidth="200.0" />
+                </items>
+            </SplitPane>
+
+        </AnchorPane>
+
+   </children>
+</VBox>

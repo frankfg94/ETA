@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Hello World!</title>
+	<meta charset="UTF-8">
+	<script src="../commonJS/jquery-3.3.1.js"></script>
+	<!--script language="JavaScript">
+
+
+		class Pos{
+			constructor (){
+				this.line = 0;
+				this.column = 0;
+			}
+		}
+
+		class Cursor
+		{
+			constructor (element)
+			{
+				this.div = element;
+
+				this.fakeEl =  window.document.createElement('span');
+				this.fakeEl.style.visibility = "hidden";
+				window.document.body.appendChild(this.fakeEl);
+
+				let computedStyle = window.getComputedStyle(this.div, null);
+				this.font = computedStyle.getPropertyValue("font-weight") + " ";
+				this.font += computedStyle.getPropertyValue("font-size") + "/";
+				//alert(this.lineHeight);
+				this.font += computedStyle.lineHeight + " ";
+				this.font += computedStyle.getPropertyValue("font-family");
+				this.lineHeight = parseInt(computedStyle.lineHeight);
+				this.pos = new Pos();
+
+
+
+
+				var that = this
+				setInterval(function () {
+					that.hideAndAppear();
+				}, 500);
+			}
+
+			hideAndAppear() {
+				this.blink = !this.blink;
+				if (this.blink) {
+					this.div.style.visibility = 'hidden';
+				} else {
+					this.div.style.visibility = 'inherit';
+				}
+			}
+
+			calculateLengthText(text, font) {
+
+				this.fakeEl.innerHTML = text;
+				this.fakeEl.style.font= font;
+				let width = this.fakeEl.offsetWidth;
+				this.fakeEl.innerHTML = "";
+				return width;
+			}
+
+
+			setY(numbreOfCarater) {
+				this.pos.column = numbreOfCarater;
+				let text = "";
+				for(let i =0; i < numbreOfCarater; i++)
+				{
+					text += "a";
+				}
+				let temp = this.calculateLengthText(text,this.font);
+				this.div.style.left = temp +"px";
+			}
+
+			setX(lineNumber) {
+				this.pos.column = lineNumber;
+				let temp = (lineNumber*this.lineHeight);
+				this.div.style.top = temp+"px";
+			}
+
+			recaulateSettings() {
+				let computedStyle = window.getComputedStyle(this.div, null);
+				this.font = computedStyle.getPropertyValue("font-weight") + " ";
+				this.font += computedStyle.getPropertyValue("font-size") + "/";
+				this.lineHeight =computedStyle.getPropertyValue("line-height");
+				this.font += this.lineHeight + " ";
+				this.font += computedStyle.getPropertyValue("font-family");
+			}
+		}
+
+	</script-->
+	<script>
+		function callToJavaFX(textEntered)
+		{
+			let textZone = $("testTextZone");
+			textZone.innerText =textZone.innerText + textEntered;
+			window.OpenFile.tester(textEntered);
+		}
+
+		function ecraseTexte(textEntered)
+		{
+			document.getElementById("testTextZone").textContent = textEntered
+		}
+
+	</script>
+	<script language="JavaScript" src="../commonJS/cursor.js"></script>
+	<style>
+		*, ::before, ::after {
+			box-sizing: border-box;
+
+		}
+
+		.fonted {
+			font-family:   monospace;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 19px;
+			letter-spacing: 0px;
+
+		}
+
+		.editor{
+			font-feature-settings: "liga" off, "calt" off;
+			cursor: text;
+			white-space: nowrap;
+			font-weight: normal;
+		}
+		.view-line{
+			position: absolute;
+			width: 100%;
+		}
+
+
+	</style>
+</head>
+
+<body >
+<!--div class="editor" style="position: absolute; overflow: hidden;left: 65px; width: 585px; height: 967px; ">
+	<div class="fonted" style="position: absolute; width: 378px; height: 967px;" role="presentation" aria-hidden="true" data-mprt="7">
+		<div class="view-line" style="top: 0px; height: 19px">
+			<span>
+				<span>package</span>
+				<span> fr.tldr.eta;0123456789azertyuiop</span>
+			</span>
+		</div>
+		<div class="view-line" style="top: 19px; height: 19px">
+			<span>
+				<span>===</span>
+			</span>
+		</div>
+	</div>
+	<div class="fonted" style="position: absolute;">
+		<div id="cursor" style="position: absolute;height: 19px; top : 0px; left: 0px;cursor: text; display: block; width: 1.11667px;background-color: black "></div>
+	</div>
+
+</div-->
+
+<!--textarea style="
+   /* min-width: 0;
+    min-height: 0;*/
+    height: 1px;
+    width: 1px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    outline: none !important;
+    resize: none;
+    border: none;
+    overflow: hidden;
+    color: transparent;
+    background-color: transparent;"
+		  id="textInput" oninput="callToJavaFX(this.value)" onblur="this.focus()" autofocus ></textarea-->
+
+
+<span id="testTextZone">tttt</span>
+<!--textarea></textarea-->
+</body>
+
+<script>
+
+	/*Window.myCursor = new Cursor( document.getElementById("cursor"));
+	Window.myCursor.setY(3);
+	Window.myCursor.setX(1);*/
+</script>
+
+<script src="../commonJS/textHandler.js"></script>
+</html>

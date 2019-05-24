@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Setting>
+  <Paths pathExec=""/>
+  <Directory DirectoryPath="C:\Users\franc\IdeaProjects\etaV2/Projects/testNouveauPrj"/>
+  <Date CreationDate="2019/05/24 15:34:14"/>
+  <initialTemplate Template="Vide"/>
+  <ProjectName Name="testNouveauPrj"/>
+  <ArgumentField Argument=""/>
+  <outputPaths Paths=""/>
+  <executorPath Paths=""/>
+  <compilerPath Paths=""/>
+  <Description DescriptionString=""/>
+</Setting>

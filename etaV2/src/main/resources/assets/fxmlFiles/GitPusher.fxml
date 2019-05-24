@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="pane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.tldr.eta.controler.GitPusher">
+   <children>
+       <Label layoutX="15.0" layoutY="89.0" text="Repository URL" />
+       <TextField fx:id="repoTF" layoutX="14.0" layoutY="122.0" onKeyReleased="#checkSendButtonActivation" prefHeight="31.0" prefWidth="571.0" />
+       <Label layoutX="15.0" layoutY="205.0" text="Username" />
+       <TextField fx:id="userTF" layoutX="95.0" layoutY="200.0" onKeyReleased="#checkSendButtonActivation" prefHeight="31.0" prefWidth="216.0" />
+        <Label layoutX="318.0" layoutY="205.0" text="Password" />
+       <PasswordField fx:id="passwordBox" layoutX="392.0" layoutY="200.0" onKeyReleased="#checkSendButtonActivation" prefHeight="31.0" prefWidth="192.0" />
+       <Button fx:id="sendRepoButton" disable="true" layoutX="14.0" layoutY="317.0" mnemonicParsing="false" onAction="#sendRepository" prefHeight="70.0" prefWidth="571.0" text="Send Repository" />
+
+   </children>
+</AnchorPane>
